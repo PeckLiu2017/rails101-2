@@ -15,7 +15,6 @@ class GroupsController < ApplicationController
       render :new
     end
 
-     redirect_to groups_path
  end
 
   def show
