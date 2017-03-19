@@ -9,11 +9,14 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-   @group.save
+    @group.save
 
      redirect_to groups_path
  end
 
+ def show
+    @group = Group.find(params[:id])
+ end
  private
 
  def group_params
