@@ -11,8 +11,9 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @group.user = current_user
+    @group.user = current_user #这是为了让登录。
     if @group.save
+      current_user.join!(@group)
       redirect_to groups_path
     else
       render :new
