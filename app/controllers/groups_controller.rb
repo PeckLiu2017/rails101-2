@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
     @group.user = current_user #这是为了让登录。
     if @group.save
       current_user.join!(@group)
-      redirect_to groups_path
+      redirect_to groups_paths
     else
       render :new
     end
